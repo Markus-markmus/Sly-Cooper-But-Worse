@@ -45,6 +45,11 @@ namespace StarterAssets
 
         [Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
         public float FallTimeout = 0.15f;
+        
+        private int _jumpCount;
+        [Tooltip("Maximum number of jumps allowed")]
+        public int MaxJumps = 2;
+
 
         [Header("Player Grounded")]
         [Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
@@ -75,6 +80,7 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -86,9 +92,7 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
-        private int _jumpCount;
-        [Tooltip("Maximum number of jumps allowed")]
-        public int MaxJumps = 2;
+
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -310,7 +314,10 @@ namespace StarterAssets
                 // Jump
                 if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                 {
+                    Debug.Log("Jump detected while grounded");
                     PerformJump();
+                    // Reset the jump input to prevent immediate double jump
+                    _input.jump = false;
                 }
 
                 // jump timeout
@@ -339,13 +346,13 @@ namespace StarterAssets
                 }
 
                 // Allow double jump
-                if (_input.jump && _jumpCount < MaxJumps)
+                if (_input.jump && _jumpCount < MaxJumps - 1)
                 {
+                    Debug.Log("Double jump detected");
                     PerformJump();
+                    // Reset the jump input to prevent immediate subsequent jumps
+                    _input.jump = false;
                 }
-
-                // if we are not grounded, do not jump
-                _input.jump = false;
             }
 
             // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
@@ -369,6 +376,7 @@ namespace StarterAssets
             // increment jump count
             _jumpCount++;
         }
+
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
