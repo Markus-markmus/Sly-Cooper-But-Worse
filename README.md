@@ -6,7 +6,30 @@ Github Link to Project: https://github.com/Markus-markmus/Sly-Cooper-But-Worse.g
 
 Overview of the Game:
 This project is based on the Sony owned IP Sly Cooper. It takes inspiration from many different iterations of the series, where the main idea is of a 3D platformer, with mild parkour elements, as well as collectible hunting. The level design takes inspiration from the third game in the series, while the simplistic gameplay style takes inspiration from the very first game. In this simplistic game, the goal is to get all the clue bottles all while avoiding the guard on the floor.
-
+How to Play:
+The game is set up with the Unity Input System, which means it has multiple input options.
+Controller:
+•	MOVE:
+o	Left Analogue stick
+•	CAMERA:
+o	Right Analogue stick
+•	JUMP/DOUBLE JUMP:
+o	South Button
+•	SPRINT: 
+o	Left Trigger
+•	RESTART:
+o	East Button
+Keyboard/Mouse:
+•	MOVE:
+o	WASD [Keyboard]
+•	CAMERA:
+o	Mouse–
+•	JUMP/DOUBLE JUMP:
+o	Space bar [Keyboard]
+•	SPRINT: 
+o	Left Shift [Keyboard]
+•	RESTART:
+o	R [Keyboard]
 Main parts of the game:
 •	Player - Sly, controlled with either WASD or left analogue stick from controller.
 •	Camera - Pivoted around Sly and can be moved around in 360degrees with either mouse or right analogue stick from controller.
@@ -48,22 +71,22 @@ o	Game consist of one scene.
 o	Game was tested on Windows with both Keyboard/Mouse and PS5 Controller.
 
 Time Management:
-Task	                                                                Time it Took (in hours)
-Setting up Unity, making a project in GitHub                        	0.5
-Research and conceptualization of game idea	                          2
-Searching for 3D models - Sly Cooper, Dimitri, Clue Bottles	          0.5
-Applying Mixamo animations to Unity	                                  1.5
-Making camera movement controls and initial testing              	    2
-Making failed third person player controls	                          2
+Task	Time it Took (in hours)
+Setting up Unity, making a project in GitHub	0.5
+Research and conceptualization of game idea	2
+Searching for 3D models - Sly Cooper, Dimitri, Clue Bottles	0.5
+Applying Mixamo animations to Unity	1.5
+Making camera movement controls and initial testing	2
+Making failed third person player controls	2
 Making Unity’s StarterAssets (ThirdPersonController) work in project	1
-Creating Thieving sparks with Particle system.	                      1
-Creating collectible bottle functionality	                            1.5
-Creating Guard AI pattern                                            	2
-Making UI elements and research into TextMesh Pro	                    1.5
-Implementing Job Failed/completed and restart method	                1
-Code documentation	                                                  1
-Making readme (report)	                                              1
-All	                                                                  18.5
+Creating Thieving sparks with Particle system.	1
+Creating collectible bottle functionality	1.5
+Creating Guard AI pattern	2
+Making UI elements and research into TextMesh Pro	1.5
+Implementing Job Failed/completed and restart method	1
+Code documentation	1
+Making readme (report)	1
+All	18.5
 
 
 Used Resources:
